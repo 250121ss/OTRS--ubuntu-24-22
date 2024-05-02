@@ -41,9 +41,8 @@ service mysql restart
 
 echo "CREATE DATABASE otrs CHARACTER SET utf8;
 CREATE USER 'otrs'@'localhost' IDENTIFIED BY 'some-pass';
-GRANT ALL PRIVILEGES ON otrs.* TO 'otrs'@'localhost';" > /tmp/create_sql_otrs.sql 
+GRANT ALL PRIVILEGES ON otrs.* TO 'otrs'@'localhost';" 
 
-mysql -p < /tmp/create_sql_otrs.sql
 
 systemctl enable mariadb nginx fcgiwrap
 systemctl start fcgiwrap
